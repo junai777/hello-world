@@ -1,0 +1,8 @@
+
+
+主从同步
+replication buffer
+repl_backlog_buffer
+
+统计基数
+hyperloglog
