@@ -1,3 +1,17 @@
+进程线程概念
+进程线程通信
+服务降级原理
+分布式事务实现原理       https://www.cnblogs.com/bluemiaomiao/p/11216380.html
+redismysql消息队列一致性   https://zhuanlan.zhihu.com/p/91770135
+java map resize       https://zhuanlan.zhihu.com/p/55890890
+乐观锁与悲观锁实现原理   https://www.cnblogs.com/X-knight/p/10669934.html#_label2
+lock与AQS
+可重入锁原理
+atomic类
+怎么设计线程池     https://juejin.cn/post/6844903494223151112#heading-7
+volatile synchronized实现原理
+
+
 反射
 注解
 抽象工厂模式
