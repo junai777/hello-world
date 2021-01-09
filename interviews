@@ -1,5 +1,8 @@
 进程线程概念
 进程线程通信
+IO模型
+微服务
+注册中心
 服务降级原理
 分布式事务实现原理       https://www.cnblogs.com/bluemiaomiao/p/11216380.html
 redismysql消息队列一致性   https://zhuanlan.zhihu.com/p/91770135
@@ -10,6 +13,59 @@ lock与AQS
 atomic类
 怎么设计线程池     https://juejin.cn/post/6844903494223151112#heading-7
 volatile synchronized实现原理
+读写屏障
+类加载机制
+双亲委派
+JMM内存模型
+GC(CMS,G1,ZGC)
+jdk8新特性stream及性能问题
+ioc,aop,bean生命周期
+
+mysql存储引擎及特性(myisam,innodb,memory,federate)
+b-b+树
+索引
+锁与并发
+ACID
+隔离级别及原理
+MVCC与间隙锁
+RR解决幻读
+提高性能(范式与反范式,sql优化,索引等)
+覆盖索引
+回表查询
+最左匹配原则
+
+redis数据结构
+string存储原理
+zset跳表原理及复杂度
+哨兵机制
+主从复制(全量增量)
+持久化机制
+aof的rewrite机制(怎么保持一致性)
+渐进式哈希
+缓存击穿雪崩穿透
+分布式锁
+setnx与expire合并成原子操作
+
+MQ拓扑
+不同MQ举例和差异
+MQ集群逻辑
+
+CICD的理解
+Jenkins
+
+怎么对推送的视频进行去重(user_id, video_id)
+数据量很大了怎么办(布隆过滤器)
+怎么保证扩容的并发性能且保证原子性
+rpc与消息队列的区别
+设计一个统计用户聊天人数与聊天数的系统(set)
+设计一个抢红包系统(rpush&lpop)
+http与redis通信方式(RESP)差异
+为什么redis不用http
+http数据包的格式
+mysql与redis的高可用与数据分表
+redis数据槽之间数据怎么迁移
+类似朋友圈系统的设计
+有大V网红怎么处理(热点数据池)
 
 
 反射
