@@ -21,6 +21,8 @@ GC(CMS,G1,ZGC)
 jdk8新特性stream及性能问题
 ioc,aop,bean生命周期
 
+分库分表  https://juejin.cn/post/6844903929457672205
+
 mysql存储引擎及特性(myisam,innodb,memory,federate)
 b-b+树
 索引
