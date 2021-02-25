@@ -88,3 +88,12 @@ csrf
 如何设计高并发系统
 如何设计消息队列
 如何设计秒杀系统
+
+进程间通信：无名管道、有名管道、信号、消息队列     https://www.jianshu.com/p/c1015f5ffa74      https://juejin.cn/post/6896383206350831630#heading-23
+socket各个函数含义
+es refresh  flush  translog https://www.jianshu.com/p/15837be98ffd
+es query 原理  任务队列
+协程
+
+程序的运行
+
