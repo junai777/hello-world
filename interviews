@@ -115,3 +115,11 @@ ping与TTL
 单例模式(线程安全)
 
 写一个死锁的例子
+
+volatile
+synchronized
+ReetrantLock实现方式
+AQS原理
+Java 线程池有哪些参数
+线程池的工作过程
+roaring bitmap
