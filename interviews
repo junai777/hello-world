@@ -124,3 +124,13 @@ Java 线程池有哪些参数
 线程池的工作过程
 roaring bitmap
 java基础https://juejin.cn/post/6932040503047225351#heading-22
+
+
+mysql char vchar
+rabbitmq如何保证至少一次
+可重复读和幻读
+分布式id生成雪花算法的时间漂移
+redis数据淘汰策略实现
+分库分表策略
+http头进行数据标识
+TCP粘包
