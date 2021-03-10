@@ -127,7 +127,7 @@ java基础https://juejin.cn/post/6932040503047225351#heading-22
 
 
 mysql char vchar
-rabbitmq如何保证至少一次
+rabbitmq如何保证至少一次  如果想要保证至少一次投递，使用队列镜像，持久的队列，持久的消息，发布者ACK，mandatory标志位，手动消费者ACK；
 可重复读和幻读
 分布式id生成雪花算法的时间漂移
 redis数据淘汰策略实现
