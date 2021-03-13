@@ -142,9 +142,26 @@ CMS：写屏障+增量更新，即有黑色指向白色时记录下这个引用
 G1:写屏障+SATB，即灰色断开指向白色的时候，记录下这个引用
 
 意向锁
+为了避免申请表锁时去遍历整个表检测行锁。
+即对某个行做修改会先获得意向共享锁
+申请表锁时会先获得意向排他锁
+如果有事务对某个行做修改，会有意向共享锁
+这时申请表锁就被阻塞
+
 next key lock
 mvcc在RR RC下的不同
 mysql各种日志
-双写
+双写  
+InnoDB 的Page Size一般是16KB，写文件是以4KB作为单位的，在极端情况下（比如断电）往往并不能保证这一操作的原子性16K的数据，
+写入4K 时，发生了系统断电/os crash ，只有一部分写是成功的，这种情况下就是 partial page write 问题。
+有人会想到系统恢复后MySQL可以根据redolog 进行恢复，而mysql在恢复的过程中是检查page的checksum，checksum就是pgae的最后事务号，发生partial page write 问题时，p
+age已经损坏，找不到该page中的事务号，就无法恢复。
+为了解决 partial page write 问题
+1.当mysql将脏数据flush到data file的时候, 先使用memcopy 将脏数据复制到内存中的double write buffer ，
+2.通过double write buffer再分2次，每次写入1MB到共享表空间，
+3.然后马上调用fsync函数，同步到磁盘上，避免缓冲带来的问题。
+
 缓存机制及所用数据结构
+https://www.cnblogs.com/jiangxu67/p/3765708.html
+
 redo log 为什么不直接落盘
