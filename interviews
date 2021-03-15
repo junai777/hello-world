@@ -119,7 +119,10 @@ ping与TTL
 volatile
 synchronized
 ReetrantLock实现方式
-AQS原理
+
+
+
+
 Java 线程池有哪些参数
 线程池的工作过程
 roaring bitmap
@@ -128,6 +131,12 @@ java基础https://juejin.cn/post/6932040503047225351#heading-22
 
 mysql char vchar
 rabbitmq如何保证至少一次  如果想要保证至少一次投递，使用队列镜像，持久的队列，持久的消息，发布者ACK，mandatory标志位，手动消费者ACK；
+mq消息丢失
+生产者丢消息：使用confirm模式，使用ack来确认是否成功投递
+消息队列丢数据：使用镜像集群+持久化落盘，待写到主片和全部副片时才返回ack
+消费者丢数据：消费者返回ack才处理成功，否则不断重发
+
+
 可重复读和幻读
 分布式id生成雪花算法的时间漂移  依赖与系统时间的一致性，如果系统时间被回调，或者改变，可能会造成id冲突或者重复。
 redis数据淘汰策略实现
@@ -184,3 +193,25 @@ mvcc
 不同的事务在并发过程中，SELECT 操作可以不加锁而是通过 MVCC 机制读取指定的版本历史记录，并通过一些手段保证保证读取的记录值符合事务所处的隔离级别，从而解决并发场景下的读写冲突。
 快照读使用版本号加活跃数组构成的视图来实现，当前读对相应的行和间隙加锁。确保了读读不阻塞，读写不阻塞，只是写写阻塞。
 
+线程池队列
+(有界队列)ArrayBlockingQueue,
+(无界队列)LinkedBlockingQeque,
+(优先级队列)PriorityBlockingQueue，
+
+线程池参数设置
+IO密集型 2*CPU核数
+计算密集型 CPU核数+1
+
+
+
+AQS原理
+AbstractQueuedSynchronizer 抽象的队列式同步器
+AQS的核心思想是，如果被请求的共享资源空闲，则将当前请求资源的线程设置为有效的工作线程，并将共享资源设置为锁定状态，如果被请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制，这个机制AQS是用CLH队列锁实现的，即将暂时获取不到锁的线程加入到队列中。
+CLH（Craig，Landin，and Hagersten）队列是一个虚拟的双向队列，虚拟的双向队列即不存在队列实例，仅存在节点之间的关联关系。
+AQS是将每一条请求共享资源的线程封装成一个CLH锁队列的一个结点（Node），来实现锁的分配。
+用大白话来说，AQS就是基于CLH队列，用volatile修饰共享变量state，线程通过CAS去改变状态符，成功则获取锁成功，失败则进入等待队列，等待被唤醒。
+AQS 定义了两种资源共享方式：
+1.Exclusive：独占，只有一个线程能执行，如ReentrantLock
+2.Share：共享，多个线程可以同时执行，如Semaphore、CountDownLatch、ReadWriteLock，CyclicBarrier
+state   使用了volatile修饰
+https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html
