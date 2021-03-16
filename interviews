@@ -231,6 +231,17 @@ https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html
 既可以方便按照逻辑模块实现信息的共享和保护，又可以实现高的内存利用率
 
 
+GET和POST区别
+GET产生一个TCP数据包，浏览器会把http header和data一并发送出去，服务器响应200(返回数据);
+POST产生两个TCP数据包，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok(返回数据)。
+get把请求的数据放在url上
+post把数据放在HTTP的包体内
 
+HTTP
+请求行：方法，版本，URI
+首部字段：数据格式，数据长度
+实体数据
 
-
+响应行：版本，状态码
+首部字段：数据格式，数据长度
+实体数据
