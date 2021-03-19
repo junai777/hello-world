@@ -384,4 +384,30 @@ raft zab一致性算法
 
 
 
+object的方法
+clone、equals、finalize、getClass、hashCode、notify、notifyAll、toString、wait
+
+final、finally、finalize的区别
+final用于声明属性，方法和类，分别表示属性不可交变，方法不可覆盖，类不可继承。
+finally是异常处理语句结构的一部分，表示总是执行。
+finalize是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，供垃圾收集时的其他资源回收，例如关闭文件等。
+
+
+缺页中断
+进程线性地址空间里的页面不必常驻内存，在执行一条指令时，如果发现他要访问的页没有在内存中（存在位为0），那么停止该指令的执行，并产生一个页不存在异常，
+对应的故障处理程序可通过从外存加载加载该页到内存的方法来排除故障，之后，原先引起的异常的指令就可以继续执行，而不再产生异常。
+
+
+
+线程安全
+
+
+
+Runnable和Callable的区别是，
+(1)Callable规定的方法是call(),Runnable规定的方法是run().
+(2)Callable的任务执行后可返回值，而Runnable的任务是不能返回值得
+(3)call方法可以抛出异常，run方法不可以
+
+
+
 
