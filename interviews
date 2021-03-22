@@ -1,5 +1,5 @@
 模拟面试地址https://bitable.feishu.cn/appwBhd98QJ9cpMggHc5QMVHlfd?from=navigation_button_1_trial&table=tbleuLHpPcQdvL4F&view=vew9iquA45
-
+题目https://codetop.cc/#/home
 
 进程线程概念
 进程线程通信
@@ -388,7 +388,7 @@ object的方法
 clone、equals、finalize、getClass、hashCode、notify、notifyAll、toString、wait
 
 final、finally、finalize的区别
-final用于声明属性，方法和类，分别表示属性不可交变，方法不可覆盖，类不可继承。
+final用于声明属性，方法和类，分别表示属性不可变，方法不可覆盖，类不可继承。
 finally是异常处理语句结构的一部分，表示总是执行。
 finalize是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，供垃圾收集时的其他资源回收，例如关闭文件等。
 
@@ -414,3 +414,15 @@ Runnable和Callable的区别是，
 1.唯一索引
 2.乐观锁
 3.防重表
+
+
+CPU的实模式和保护模式
+实模式：两个 16 位的值如何组合成一个 20 位的地址：段寄存器所提供的段基址先向左移 4 位，然后再与 16 位的段偏移量相加
+保护模式：保护进程地址空间，有段表来指向段基地址的位置，而不是段基地址直接参与计算
+
+
+变量的声明有两种情况：
+1、一种是需要建立存储空间的。例如：int a 在声明的时候就已经建立了存储空间。
+2、另一种是不需要建立存储空间的。 例如：extern int a 其中变量a是在别的文件中定义的。
+
+
