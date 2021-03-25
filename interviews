@@ -488,3 +488,31 @@ G1分为young gc模式和mixed gc模式
 
 
 
+TCC
+先是服务调用链路依次执行 Try 逻辑。
+如果都正常的话，TCC 分布式事务框架推进执行 Confirm 逻辑，完成整个事务。
+如果某个服务的 Try 逻辑有问题，TCC 分布式事务框架感知到之后就会推进执行各个服务的 Cancel 逻辑，撤销之前执行的各种操作。
+
+
+mysql的线程有哪几个
+master thread: 核心后台线程，异步刷新到硬盘，脏页刷新，合并插入缓冲，UNDO页的回收
+IO thread: 处理IO请求的，读主库bin log 到从库
+purge thread: 回收undo页
+page cleaner thread: 刷脏页
+
+
+mysql内存
+读写都在缓冲区buffer pool中，定时会把脏页刷到磁盘
+buffer pool: 数据页，索引页，插入缓冲，锁信息，自适应哈希索引，数据字典信息
+使用LRU算法管理
+redo log buffer：事务提交时刷磁盘，每秒刷磁盘，满一半时刷磁盘
+额外内存池
+
+check point刷盘
+更新数据是写缓冲池中数据页，然后写redo log buffer
+然后使用check point技术刷盘，即缓冲池不够用时或redo log不可用时
+通过LSN标记版本
+
+
+
+
