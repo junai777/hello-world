@@ -637,3 +637,12 @@ count要对每个表进行，取总和
 使用mapreduce去计算日志中搜索关键词的频率
 
 
+负载均衡
+1.round-robin
+2.加权round-robin
+3.最小连接
+4.hash
+5.一致性hash
+
+
+
