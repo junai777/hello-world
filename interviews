@@ -652,3 +652,23 @@ count要对每个表进行，取总和
 Inode包含文件的属性(如读写属性、owner等，以及指向数据块的指针)，数据区域块则是文件内容。
 
 
+
+反射是在运行时才知道要操作的类是什么，并且可以在运行时获取类的完整构造，并调用对应的方法。
+例
+Class clz = Apple.class;
+Constructor constructor = clz.getConstructor();
+Apple apple = (Apple)constructor.newInstance();
+
+
+CPU瓶颈排查
+CPU使用率分用户CPU使用率，系统CPU使用率，等待I/O的CPU使用率，中断的CPU使用率
+平均负载：过去1/5/15分钟的平均活跃进程数，反应了系统的整体负载情况，理想情况下平均负载等于CPU核数
+上下文切换：过多的上下文切换，会使CPU时间消耗在寄存器、内核栈以及虚拟内存等数据的保存和恢复上，成为瓶颈
+CPU高速缓存：高速缓冲的命中率也会影响性能
+
+top vmstat pidstat命令排查瓶颈原因
+进程分析工具：perf
+I/O分析工具：dstat
+网络分析工具：tcpdump
+
+
