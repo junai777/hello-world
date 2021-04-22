@@ -671,4 +671,35 @@ top vmstat pidstat命令排查瓶颈原因
 I/O分析工具：dstat
 网络分析工具：tcpdump
 
+ReentrantLock新增的三个高级功能:
+1.等待可中断：长期不释放锁，线程可以放弃等待
+2.公平锁
+3.绑定condition条件
+
+
+对象头的内容
+1.mark word：记录了对象和锁的有关信息
+2.指向类的指针
+3.数组长度
+
+
+
+
+对象创建的步骤：
+1.检查类是否被加载
+2.为对象分配内存空间
+3.为分配的内存初始化0值
+4.设置对象头
+5.执行构造方法
+
+
+双亲委派的作用
+1.防止重复加载同一个类
+
+
+concurrentHashMap 
+1.7 分段锁+reentrantLock
+1.8 cas + synchronized
+
+
 
