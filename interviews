@@ -660,6 +660,8 @@ Constructor constructor = clz.getConstructor();
 Apple apple = (Apple)constructor.newInstance();
 
 
+CPU使用率：(1-空闲时间/总时间)*100%
+
 CPU瓶颈排查
 CPU使用率分用户CPU使用率，系统CPU使用率，等待I/O的CPU使用率，中断的CPU使用率
 平均负载：过去1/5/15分钟的平均活跃进程数，反应了系统的整体负载情况，理想情况下平均负载等于CPU核数
